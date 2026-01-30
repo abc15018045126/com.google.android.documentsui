@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>com.google.android.documentsui</title>
+    <style>
+        :root {
+            --primary: #4285f4;
+            --bg: #ffffff;
+            --text: #202124;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Google Sans', Roboto, Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            word-break: break-all;
+        }
+
+        #status-container {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #5f6368;
+            min-height: 40px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+            transition: background-color 0.2s;
+        }
+
+        .btn:active {
+            background-color: #1a73e8;
+            box-shadow: 0 4px 4px 0 rgba(60, 64, 67, 0.3), 0 8px 12px 6px rgba(60, 64, 67, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V8C22 6.89 21.11 6 20 6H12L10 4Z"
+                fill="#4285F4" />
+        </svg>
+        <h1>com.google.android.documentsui</h1>
+        <button id="launch-btn" class="btn">Manual Launch</button>
+        <div id="status-container"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

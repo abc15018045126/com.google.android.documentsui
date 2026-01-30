@@ -1,0 +1,43 @@
+Categories:
+  - System
+  - Utility
+License: MIT
+AuthorName: lxf
+SourceCode: https://github.com/abc15018045126/com.google.android.documentsui
+IssueTracker: https://github.com/abc15018045126/com.google.android.documentsui/issues
+
+Summary: A simple launcher for the hidden system DocumentsUI.
+Description: |-
+    This application acts as a bridge to launch the hidden system file manager 
+    (com.google.android.documentsui) on Android devices where the icon is hidden 
+    by the manufacturer. It uses the Capacitor framework for a lightweight execution.
+
+RepoType: git
+Repo: https://github.com/abc15018045126/com.google.android.documentsui
+
+Builds:
+  - versionName: 1.0.0
+    versionCode: 1
+    commit: v1.0.0
+    subdir: android/app
+    sudo:
+      - apt-get update || apt-get update
+      - apt-get install -y nodejs npm
+    # F-Droid 的构建环境由 srclib 或构建服务器版本决定
+    # 强制要求 Java 21 需要在 build server 配置中指定
+    java: yes
+    # 指定构建环境
+    gradle:
+      - yes
+    prebuild:
+      - cd ../..
+      - npm install
+      - npm run build
+      - npx cap sync
+    # 解决 Node.js 内存限制和指定编译器版本
+    ant: yes
+
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1
